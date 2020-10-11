@@ -1,0 +1,14 @@
+1.官网下载安装包，链接：https://nodejs.org/en/download/
+注释：官网下载的太慢，可以去淘宝npm镜像：http://npm.taobao.org/，下载好.mis文件，傻瓜式安装到d盘即可；
+2.打开命令行（cmd）输入node -v 和npm -v 查看版本，若正常显示，则成功。
+3.环境变量的配置：
+（1）在目录nodejs文件（自己创建的nodejs安装目录）夹下创建两个文件夹node_global和 node_cache，用来放安
+装过程的缓存文件以及最终的模块配置位置
+（2）在cmd中输入如下命令：（注意修改为自己nodejs的目录）
+npm config set prefix "D:\Program Files\nodejs\node_global"
+npm config set cache "D:\Program Files\nodejs\node_cache"
+（3）设置环境变量
+右键我的电脑-->属性-->高级系统设置-->环境变量 ，新建系统变量，变量名设为NODE_PATH,变量值为node_modules路径
+并且在Path里面新增node_global的目录
+修改完成之后，在命令行输入node回车，再输入require('cluster')，不出错即正常。
+
